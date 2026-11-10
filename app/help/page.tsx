@@ -1,0 +1,7 @@
+import Link from "next/link";
+import { FAQ } from "../components/faq";
+import { homeFaqs } from "../lib/data";
+export const metadata = { title: "Help centre" };
+export default function HelpPage() {
+  return <main id="main-content"><section className="hero"><div className="hero-in"><h1>Help with your journey</h1><p>Find answers about tickets, payments and preparing for your trip.</p></div></section><section className="sec services-intro"><h2>How can we help?</h2><p className="sub">Start with the information you need.</p><div className="service-panels"><article className="service-panel"><h3>Find a journey</h3><p>Choose your route and dates to view sample bus options.</p><Link href="/routes" className="services-link">Explore routes →</Link></article><article className="service-panel"><h3>Your booking</h3><p>See how booking lookup works using the sample booking reference.</p><Link href="/manage-booking" className="services-link">Manage booking →</Link></article></div></section><section className="sec"><h2>Frequently asked questions</h2><p className="sub">Quick answers before you book.</p><FAQ items={homeFaqs} /></section><section className="sec"><h2>Before you travel</h2><p className="sub">Check your boarding point, departure time, ID and luggage allowance with the operator.</p><Link className="services-link" href="/services#before-you-go">Read travel guidance →</Link></section><p className="note">This is a frontend preview. Payments, ticket cancellations and customer support are not connected.</p></main>;
+}
